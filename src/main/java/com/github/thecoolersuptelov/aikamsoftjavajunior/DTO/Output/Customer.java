@@ -1,4 +1,4 @@
-package com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Input;
+package com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Output;
 
 import com.fasterxml.jackson.annotation.*;
 
@@ -9,13 +9,17 @@ import java.util.List;
 import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({"criterias"})
+@JsonPropertyOrder({"name", "purchases", "totalExpenses"})
 @Generated("jsonschema2pojo")
-public class SearchInput implements Serializable {
+public class Customer implements Serializable {
 
-    private final static long serialVersionUID = 7137462991151256464L;
-    @JsonProperty("criterias")
-    public List<Criteria> criterias = null;
+    private final static long serialVersionUID = 3136332436861305455L;
+    @JsonProperty("name")
+    public String name;
+    @JsonProperty("purchases")
+    public List<Purchase> purchases = null;
+    @JsonProperty("totalExpenses")
+    public int totalExpenses;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -28,5 +32,4 @@ public class SearchInput implements Serializable {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
-
 }

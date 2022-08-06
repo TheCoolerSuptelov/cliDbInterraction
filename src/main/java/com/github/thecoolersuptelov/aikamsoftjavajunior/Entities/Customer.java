@@ -3,6 +3,8 @@ package com.github.thecoolersuptelov.aikamsoftjavajunior.Entities;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,6 +21,17 @@ public class Customer {
 
     @Column(name = "first_name")
     private String firstName;
+
+    @OneToMany(mappedBy = "customer", orphanRemoval = false, fetch = FetchType.LAZY)
+    private List<Receipt> receipts = new ArrayList<>();
+
+    public List<Receipt> getReceipts() {
+        return receipts;
+    }
+
+    public void setReceipts(List<Receipt> receipts) {
+        this.receipts = receipts;
+    }
 
     public String getFirstName() {
         return firstName;

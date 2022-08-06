@@ -1,6 +1,7 @@
 package com.github.thecoolersuptelov.aikamsoftjavajunior;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Input.SearchInput;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.Services.CliActions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class AikamsoftJavaJuniorApplication implements CommandLineRunner {
@@ -28,10 +30,21 @@ public class AikamsoftJavaJuniorApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        for (int i = 0; i < args.length; i++) {
-            logger.info(args[i]);
+        if (args.length != 3) {
+            throw new IllegalArgumentException("Для запуска выполнения программы требуется 3 аргумента." + "Передано: " + args.length + ". Проверьте корректность аргументов.");
         }
-        var xx = new ObjectMapper().readValue(Files.readString(Path.of("src/test/resources/input.json")), Map.class);
-        actionsMap.get(args[0]).prepareAnswer("yaya", "yiyi");
+
+        if (actionsMap.containsKey(args[0]) == false) {
+            throw new IllegalArgumentException("Запрашиваемый алгоритм работы не найден." + actionsMap.entrySet().stream().map(Map.Entry::getKey).collect(Collectors.joining(",")));
+        }
+
+        if (!Files.exists(Path.of(args[1])) || !Files.exists(Path.of(args[2]))) {
+            var notExistedFile = Files.exists(Path.of(args[1])) ? args[2] : args[1];
+            throw new IllegalArgumentException("По предоставленному пути файл не обнаружен" + notExistedFile);
+        }
+        var xxx = new ObjectMapper().readValue(Files.readString(Path.of(args[1])), SearchInput.class);
+
+
+        actionsMap.get(args[0]).doStuff(args[1], args[2]);
     }
 }
