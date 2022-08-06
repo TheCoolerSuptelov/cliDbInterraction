@@ -1,0 +1,45 @@
+package com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Input;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+import javax.annotation.Generated;
+
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({"lastName", "productName", "minTimes", "minExpenses", "maxExpenses", "badCustomers"})
+@Generated("jsonschema2pojo")
+public class Criteria implements Serializable {
+
+    private final static long serialVersionUID = -3496711984289681000L;
+    @JsonProperty("lastName")
+    public String lastName;
+    @JsonProperty("productName")
+    public String productName;
+    @JsonProperty("minTimes")
+    public int minTimes;
+    @JsonProperty("minExpenses")
+    public int minExpenses;
+    @JsonProperty("maxExpenses")
+    public int maxExpenses;
+    @JsonProperty("badCustomers")
+    public int badCustomers;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+}

@@ -25,8 +25,7 @@ public class CustomerDto implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CustomerDto entity = (CustomerDto) o;
-        return Objects.equals(this.lastName, entity.lastName) &&
-                Objects.equals(this.firstName, entity.firstName);
+        return Objects.equals(this.lastName, entity.lastName) && Objects.equals(this.firstName, entity.firstName);
     }
 
     @Override
@@ -36,8 +35,6 @@ public class CustomerDto implements Serializable {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "lastName = " + lastName + ", " +
-                "firstName = " + firstName + ")";
+        return getClass().getSimpleName() + "(" + "lastName = " + lastName + ", " + "firstName = " + firstName + ")";
     }
 }
