@@ -44,6 +44,6 @@ public class Search implements CliActions<SearchInput, SearchOutput> {
 
     @Override
     public void serilizeOutputData(String outputPath, SearchOutput dataToSerialize) {
-
+        // TODO document why this method is empty
     }
 }

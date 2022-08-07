@@ -1,10 +1,6 @@
 package com.github.thecoolersuptelov.aikamsoftjavajunior;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Input.SearchInput;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.Services.CliActions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,7 +14,6 @@ import java.util.stream.Collectors;
 @SpringBootApplication
 public class AikamsoftJavaJuniorApplication implements CommandLineRunner {
 
-    private static final Logger logger = LoggerFactory.getLogger(AikamsoftJavaJuniorApplication.class);
     @Autowired
     private Map<String, CliActions> actionsMap;
 
@@ -34,7 +29,7 @@ public class AikamsoftJavaJuniorApplication implements CommandLineRunner {
             throw new IllegalArgumentException("Для запуска выполнения программы требуется 3 аргумента." + "Передано: " + args.length + ". Проверьте корректность аргументов.");
         }
 
-        if (actionsMap.containsKey(args[0]) == false) {
+        if (!actionsMap.containsKey(args[0])) {
             throw new IllegalArgumentException("Запрашиваемый алгоритм работы не найден." + actionsMap.entrySet().stream().map(Map.Entry::getKey).collect(Collectors.joining(",")));
         }
 
