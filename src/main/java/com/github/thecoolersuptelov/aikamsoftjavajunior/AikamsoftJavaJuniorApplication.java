@@ -42,9 +42,6 @@ public class AikamsoftJavaJuniorApplication implements CommandLineRunner {
             var notExistedFile = Files.exists(Path.of(args[1])) ? args[2] : args[1];
             throw new IllegalArgumentException("По предоставленному пути файл не обнаружен" + notExistedFile);
         }
-        var xxx = new ObjectMapper().readValue(Files.readString(Path.of(args[1])), SearchInput.class);
-
-
         actionsMap.get(args[0]).doStuff(args[1], args[2]);
     }
 }
