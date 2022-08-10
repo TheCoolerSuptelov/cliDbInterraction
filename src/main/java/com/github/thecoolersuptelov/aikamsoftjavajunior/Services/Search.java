@@ -4,12 +4,11 @@ import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.DAO.CustomerRepository;
-import com.github.thecoolersuptelov.aikamsoftjavajunior.DAO.ProductRepository;
-import com.github.thecoolersuptelov.aikamsoftjavajunior.DAO.ReceiptRepository;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Input.SearchInput;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Output.SearchOutput;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Output.SearchOutputResultRows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.serializer.support.SerializationFailedException;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -39,16 +38,13 @@ public class Search implements CliActions<SearchInput, SearchOutput> {
             }
 
             if ((curCriteria.productName != null && !curCriteria.productName.isEmpty()) && curCriteria.minTimes > 0) {
-               searchOutput.getResults().add(new SearchOutputResultRows(curCriteria, customerRepository.findByProduct_ProductNameEqualsAndIdGreaterThan(curCriteria.productName, curCriteria.minTimes)));
-            }
-            if ((curCriteria.productName != null && !curCriteria.productName.isEmpty()) && curCriteria.minTimes > 0) {
-                searchOutput.getResults().add(new SearchOutputResultRows(curCriteria, customerRepository.findByProduct_ProductNameEqualsAndIdGreaterThan(curCriteria.productName, curCriteria.minTimes)));
+                searchOutput.getResults().add(new SearchOutputResultRows(curCriteria, customerRepository.findByProductProductNameEqualsAndIdGreaterThan(curCriteria.productName, curCriteria.minTimes)));
             }
 
-            if(curCriteria.maxExpenses > 0){
+            if (curCriteria.maxExpenses > 0) {
                 searchOutput.getResults().add(new SearchOutputResultRows(curCriteria, customerRepository.findCustomersWithExpensesInRange(curCriteria.minExpenses, curCriteria.maxExpenses)));
             }
-            if(curCriteria.badCustomers > 0){
+            if (curCriteria.badCustomers > 0) {
                 searchOutput.getResults().add(new SearchOutputResultRows(curCriteria, customerRepository.findBadCustomers(curCriteria.badCustomers)));
             }
         }
@@ -61,16 +57,15 @@ public class Search implements CliActions<SearchInput, SearchOutput> {
         return new ObjectMapper().readValue(Files.readString(Path.of(inputPath)), SearchInput.class);
     }
 
-    @Override
+ /*   @Override
     public void serilizeOutputData(String outputPath, SearchOutput dataToSerialize) {
-        var xx = 0;
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
         try {
-            writer.writeValue(new File(outputPath),dataToSerialize);
+            writer.writeValue(new File(outputPath), dataToSerialize);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new SerializationFailedException(e.getMessage());
         }
-        //new ObjectMapper().writer(new DefaultPrettyPrinter()).writeValue(new File(outputPath), dataToSerialize)
-    }
+
+    }*/
 }

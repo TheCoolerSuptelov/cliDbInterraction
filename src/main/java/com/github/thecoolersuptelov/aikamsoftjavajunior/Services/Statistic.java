@@ -22,8 +22,5 @@ public class Statistic implements CliActions<StatsInput, StatsOutput> {
         return null;
     }
 
-    @Override
-    public void serilizeOutputData(String outputPath, StatsOutput dataToSerialize) {
 
-    }
 }
