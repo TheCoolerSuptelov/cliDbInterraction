@@ -1,8 +1,8 @@
 {
   "criterias": [
     {"lastName": "Иванов"},
-    {"productName": "Andong potatoes", "minTimes": 1},
-    {"minExpenses": 112, "maxExpenses": 4000},
+    {"productName": "Jinju potatoes", "minTimes": 1},
+    {"minExpenses": 1, "maxExpenses": 10000},
     {"badCustomers": 3}
   ]
 }

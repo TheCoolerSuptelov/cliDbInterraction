@@ -1,6 +1,8 @@
 package com.github.thecoolersuptelov.aikamsoftjavajunior.Services;
 
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.DAO.CustomerRepository;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.DAO.ProductRepository;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.DAO.ReceiptRepository;
@@ -10,6 +12,7 @@ import com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Output.SearchOutputR
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,12 +22,6 @@ public class Search implements CliActions<SearchInput, SearchOutput> {
 
     @Autowired
     private CustomerRepository customerRepository;
-
-    @Autowired
-    private ReceiptRepository receiptRepository;
-
-    @Autowired
-    private ProductRepository productRepository;
 
     @Override
     public void doStuff(String inputPath, String outputPath) throws IOException {
@@ -66,6 +63,14 @@ public class Search implements CliActions<SearchInput, SearchOutput> {
 
     @Override
     public void serilizeOutputData(String outputPath, SearchOutput dataToSerialize) {
-        // TODO document why this method is empty
+        var xx = 0;
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+        try {
+            writer.writeValue(new File(outputPath),dataToSerialize);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //new ObjectMapper().writer(new DefaultPrettyPrinter()).writeValue(new File(outputPath), dataToSerialize)
     }
 }

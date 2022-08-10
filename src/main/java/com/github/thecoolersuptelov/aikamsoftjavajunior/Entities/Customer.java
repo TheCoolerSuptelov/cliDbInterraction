@@ -1,5 +1,6 @@
 package com.github.thecoolersuptelov.aikamsoftjavajunior.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -23,6 +24,7 @@ public class Customer {
     private String firstName;
 
     @OneToMany(mappedBy = "customer", orphanRemoval = false, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Receipt> receipts = new ArrayList<>();
 
     public List<Receipt> getReceipts() {

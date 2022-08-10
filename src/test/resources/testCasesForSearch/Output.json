@@ -1,0 +1,59 @@
+{
+  "type" : "Search",
+  "results" : [ {
+    "criteria" : {
+      "lastName" : "Иванов",
+      "minTimes" : 0,
+      "minExpenses" : 0.0,
+      "maxExpenses" : 0.0,
+      "badCustomers" : 0
+    },
+    "customerList" : [ ]
+  }, {
+    "criteria" : {
+      "productName" : "Andong potatoes",
+      "minTimes" : 1,
+      "minExpenses" : 0.0,
+      "maxExpenses" : 0.0,
+      "badCustomers" : 0
+    },
+    "customerList" : [ ]
+  }, {
+    "criteria" : {
+      "productName" : "Andong potatoes",
+      "minTimes" : 1,
+      "minExpenses" : 0.0,
+      "maxExpenses" : 0.0,
+      "badCustomers" : 0
+    },
+    "customerList" : [ ]
+  }, {
+    "criteria" : {
+      "minTimes" : 0,
+      "minExpenses" : 112.0,
+      "maxExpenses" : 4000.0,
+      "badCustomers" : 0
+    },
+    "customerList" : [ ]
+  }, {
+    "criteria" : {
+      "minTimes" : 0,
+      "minExpenses" : 0.0,
+      "maxExpenses" : 0.0,
+      "badCustomers" : 3
+    },
+    "customerList" : [ {
+      "id" : 60,
+      "lastName" : "Laurel",
+      "firstName" : "Jesse"
+    }, {
+      "id" : 84,
+      "lastName" : "Iona",
+      "firstName" : "Ria"
+    }, {
+      "id" : 61,
+      "lastName" : "Stella",
+      "firstName" : "Chadwick"
+    } ]
+  } ]
+}
