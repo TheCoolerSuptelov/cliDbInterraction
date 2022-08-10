@@ -23,9 +23,9 @@ public class Criteria implements Serializable {
     @JsonProperty("minTimes")
     public long minTimes;
     @JsonProperty("minExpenses")
-    public int minExpenses;
+    public float minExpenses;
     @JsonProperty("maxExpenses")
-    public int maxExpenses;
+    public float maxExpenses;
     @JsonProperty("badCustomers")
     public int badCustomers;
 }

@@ -44,7 +44,16 @@ public class Search implements CliActions<SearchInput, SearchOutput> {
             if ((curCriteria.productName != null && !curCriteria.productName.isEmpty()) && curCriteria.minTimes > 0) {
                searchOutput.getResults().add(new SearchOutputResultRows(curCriteria, customerRepository.findByProduct_ProductNameEqualsAndIdGreaterThan(curCriteria.productName, curCriteria.minTimes)));
             }
+            if ((curCriteria.productName != null && !curCriteria.productName.isEmpty()) && curCriteria.minTimes > 0) {
+                searchOutput.getResults().add(new SearchOutputResultRows(curCriteria, customerRepository.findByProduct_ProductNameEqualsAndIdGreaterThan(curCriteria.productName, curCriteria.minTimes)));
+            }
 
+            if(curCriteria.maxExpenses > 0){
+                searchOutput.getResults().add(new SearchOutputResultRows(curCriteria, customerRepository.findCustomersWithExpensesInRange(curCriteria.minExpenses, curCriteria.maxExpenses)));
+            }
+            if(curCriteria.badCustomers > 0){
+                searchOutput.getResults().add(new SearchOutputResultRows(curCriteria, customerRepository.findBadCustomers(curCriteria.badCustomers)));
+            }
         }
         return searchOutput;
     }
