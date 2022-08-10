@@ -2,44 +2,201 @@
   "type" : "Search",
   "results" : [ {
     "criteria" : {
-      "lastName" : "Иванов",
-      "minTimes" : 0,
-      "minExpenses" : 0.0,
-      "maxExpenses" : 0.0,
-      "badCustomers" : 0
+      "lastName" : "Иванов"
     },
     "customerList" : [ ]
   }, {
     "criteria" : {
-      "productName" : "Andong potatoes",
-      "minTimes" : 1,
-      "minExpenses" : 0.0,
-      "maxExpenses" : 0.0,
-      "badCustomers" : 0
+      "productName" : "Jinju potatoes",
+      "minTimes" : 1
     },
-    "customerList" : [ ]
+    "customerList" : [ {
+      "id" : 16,
+      "lastName" : "Deanna",
+      "firstName" : "Rogan"
+    } ]
   }, {
     "criteria" : {
-      "productName" : "Andong potatoes",
-      "minTimes" : 1,
-      "minExpenses" : 0.0,
-      "maxExpenses" : 0.0,
-      "badCustomers" : 0
+      "productName" : "Jinju potatoes",
+      "minTimes" : 1
     },
-    "customerList" : [ ]
+    "customerList" : [ {
+      "id" : 16,
+      "lastName" : "Deanna",
+      "firstName" : "Rogan"
+    } ]
   }, {
     "criteria" : {
-      "minTimes" : 0,
-      "minExpenses" : 112.0,
-      "maxExpenses" : 4000.0,
-      "badCustomers" : 0
+      "minExpenses" : 1.0,
+      "maxExpenses" : 10000.0
     },
-    "customerList" : [ ]
+    "customerList" : [ {
+      "id" : 42,
+      "lastName" : "Juliet",
+      "firstName" : "Maggy"
+    }, {
+      "id" : 74,
+      "lastName" : "Raven",
+      "firstName" : "Nita"
+    }, {
+      "id" : 71,
+      "lastName" : "Pascale",
+      "firstName" : "Lenore"
+    }, {
+      "id" : 82,
+      "lastName" : "Mari",
+      "firstName" : "Melvin"
+    }, {
+      "id" : 34,
+      "lastName" : "Miranda",
+      "firstName" : "Tana"
+    }, {
+      "id" : 41,
+      "lastName" : "Amity",
+      "firstName" : "Xander"
+    }, {
+      "id" : 96,
+      "lastName" : "Freya",
+      "firstName" : "Jacqueline"
+    }, {
+      "id" : 70,
+      "lastName" : "Ruby",
+      "firstName" : "Joel"
+    }, {
+      "id" : 43,
+      "lastName" : "Kyla",
+      "firstName" : "Charles"
+    }, {
+      "id" : 52,
+      "lastName" : "Cara",
+      "firstName" : "Alfreda"
+    }, {
+      "id" : 67,
+      "lastName" : "Madeson",
+      "firstName" : "Victor"
+    }, {
+      "id" : 83,
+      "lastName" : "Larissa",
+      "firstName" : "Venus"
+    }, {
+      "id" : 32,
+      "lastName" : "Avye",
+      "firstName" : "Judah"
+    }, {
+      "id" : 90,
+      "lastName" : "Gloria",
+      "firstName" : "Reagan"
+    }, {
+      "id" : 35,
+      "lastName" : "Octavia",
+      "firstName" : "Renee"
+    }, {
+      "id" : 100,
+      "lastName" : "Dana",
+      "firstName" : "Emma"
+    }, {
+      "id" : 38,
+      "lastName" : "Willow",
+      "firstName" : "Cullen"
+    }, {
+      "id" : 15,
+      "lastName" : "Britanni",
+      "firstName" : "Seth"
+    }, {
+      "id" : 79,
+      "lastName" : "Daphne",
+      "firstName" : "Xenos"
+    }, {
+      "id" : 48,
+      "lastName" : "April",
+      "firstName" : "Armando"
+    }, {
+      "id" : 86,
+      "lastName" : "Victoria",
+      "firstName" : "Oscar"
+    }, {
+      "id" : 78,
+      "lastName" : "Imani",
+      "firstName" : "Gavin"
+    }, {
+      "id" : 81,
+      "lastName" : "Buffy",
+      "firstName" : "Peter"
+    }, {
+      "id" : 19,
+      "lastName" : "Celeste",
+      "firstName" : "Plato"
+    }, {
+      "id" : 92,
+      "lastName" : "Clio",
+      "firstName" : "Imani"
+    }, {
+      "id" : 31,
+      "lastName" : "Debra",
+      "firstName" : "Ezekiel"
+    }, {
+      "id" : 21,
+      "lastName" : "Isabelle",
+      "firstName" : "Leonard"
+    }, {
+      "id" : 50,
+      "lastName" : "Elizabeth",
+      "firstName" : "Lacy"
+    }, {
+      "id" : 3,
+      "lastName" : "Maite",
+      "firstName" : "Quintessa"
+    }, {
+      "id" : 28,
+      "lastName" : "Lydia",
+      "firstName" : "Raja"
+    }, {
+      "id" : 1,
+      "lastName" : "Hayley",
+      "firstName" : "Zenaida"
+    }, {
+      "id" : 65,
+      "lastName" : "Ursa",
+      "firstName" : "Jayme"
+    }, {
+      "id" : 64,
+      "lastName" : "Meghan",
+      "firstName" : "Baker"
+    }, {
+      "id" : 2,
+      "lastName" : "Debra",
+      "firstName" : "Tatyana"
+    }, {
+      "id" : 16,
+      "lastName" : "Deanna",
+      "firstName" : "Rogan"
+    }, {
+      "id" : 75,
+      "lastName" : "Lilah",
+      "firstName" : "Mark"
+    }, {
+      "id" : 23,
+      "lastName" : "Signe",
+      "firstName" : "Patience"
+    }, {
+      "id" : 56,
+      "lastName" : "Martina",
+      "firstName" : "Haley"
+    }, {
+      "id" : 58,
+      "lastName" : "Vielka",
+      "firstName" : "Shad"
+    }, {
+      "id" : 8,
+      "lastName" : "Harriet",
+      "firstName" : "Allen"
+    }, {
+      "id" : 44,
+      "lastName" : "Maggie",
+      "firstName" : "Emmanuel"
+    } ]
   }, {
     "criteria" : {
-      "minTimes" : 0,
-      "minExpenses" : 0.0,
-      "maxExpenses" : 0.0,
       "badCustomers" : 3
     },
     "customerList" : [ {
