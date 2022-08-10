@@ -21,7 +21,7 @@ public class Criteria implements Serializable {
     @JsonProperty("productName")
     public String productName;
     @JsonProperty("minTimes")
-    public int minTimes;
+    public long minTimes;
     @JsonProperty("minExpenses")
     public int minExpenses;
     @JsonProperty("maxExpenses")
