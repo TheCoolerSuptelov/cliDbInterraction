@@ -29,8 +29,8 @@ public class Search implements CliActions<SearchInput, SearchOutput> {
 
         for (int i = 0; i < inputDeserializeData.criterias.size(); i++) {
             var curCriteria = inputDeserializeData.criterias.get(i);
-            if (!curCriteria.lastName.isEmpty()) {
-                searchOutput.getResults().add(new SearchOutputResultRows(curCriteria, customerRepository.findByLastNameEquals(curCriteria.lastName)));
+            if (curCriteria.lastName.isPresent()) {
+                searchOutput.getResults().add(new SearchOutputResultRows(curCriteria, customerRepository.findByLastNameEquals(curCriteria.lastName.get())));
             }
         }
         return searchOutput;
