@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 /**
  * Используем класс как контракт для валидации json"а
- * */
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"lastName", "productName", "minTimes", "minExpenses", "maxExpenses", "badCustomers"})
 @Generated("jsonschema2pojo")

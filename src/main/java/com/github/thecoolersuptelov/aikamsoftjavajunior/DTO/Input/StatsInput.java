@@ -8,10 +8,7 @@ import javax.annotation.Generated;
 import java.io.Serializable;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-        "startDate",
-        "endDate"
-})
+@JsonPropertyOrder({"startDate", "endDate"})
 @Generated("jsonschema2pojo")
 public class StatsInput implements Serializable {
 

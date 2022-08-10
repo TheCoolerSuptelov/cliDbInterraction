@@ -1,17 +1,13 @@
 package com.github.thecoolersuptelov.aikamsoftjavajunior.Services;
 
-import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.DAO.CustomerRepository;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Input.SearchInput;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Output.SearchOutput;
 import com.github.thecoolersuptelov.aikamsoftjavajunior.DTO.Output.SearchOutputResultRows;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.serializer.support.SerializationFailedException;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
